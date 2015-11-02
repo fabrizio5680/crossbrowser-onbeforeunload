@@ -1,7 +1,7 @@
 (function (window, document) {
 	angular.module('crossbrowser-onbeforeunload', [])
 
-		.service('refreshPrevent', function ($window) {
+		.service('refreshPrevent', function () {
 
 			var message = "Are you sure ?";
 
@@ -36,18 +36,18 @@
 
 				message = customMsg;
 
-				if ($window.attachEvent) {
-					$window.attachEvent('onbeforeunload', onbeforeunload);
-				} else if ($window.addEventListener) {
-					$window.addEventListener('beforeunload', onbeforeunload);
+				if (window.attachEvent) {
+					window.attachEvent('onbeforeunload', onbeforeunload);
+				} else if (window.addEventListener) {
+					window.addEventListener('beforeunload', onbeforeunload);
 				}
 			};
 
 			this.unbind = function () {
-				if ($window.detachEvent) {
-					$window.detachEvent('onbeforeunload', onbeforeunload);
-				} else if ($window.removeEventListener) {
-					$window.removeEventListener('beforeunload', onbeforeunload);
+				if (window.detachEvent) {
+					window.detachEvent('onbeforeunload', onbeforeunload);
+				} else if (window.removeEventListener) {
+					window.removeEventListener('beforeunload', onbeforeunload);
 				}
 			}
 		});
