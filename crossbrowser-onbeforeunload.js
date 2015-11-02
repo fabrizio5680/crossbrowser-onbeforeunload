@@ -5,6 +5,8 @@
 	var mod = angular.module('crossbrowser-onbeforeunload', [])
 	mod.service('refreshPrevent', function ($window) {
 
+    var bound = null;
+
 		/**
 		 * Bind onbeforeunload
 		 * @param customMsg
@@ -13,10 +15,16 @@
 
 			message = customMsg;
 
+      if (bound) {
+        return;
+      }
+
 			if ($window.attachEvent) {
 				$window.attachEvent('onbeforeunload', onbeforeunload);
+        bound = true;
 			} else if ($window.addEventListener) {
 				$window.addEventListener('beforeunload', onbeforeunload);
+        bound = true;
 			}
 		};
 
@@ -26,8 +34,10 @@
 		this.unbind = function () {
 			if ($window.detachEvent) {
 				$window.detachEvent('onbeforeunload', onbeforeunload);
+        bound = false;
 			} else if ($window.removeEventListener) {
 				$window.removeEventListener('beforeunload', onbeforeunload);
+        bound = false;
 			}
 		};
 
