@@ -1,5 +1,5 @@
 {
-  "version": "1.0.0",
+  "version": "1.0.1",
   "name": "crossbrowser-onbeforeunload",
   "main": ["crossbrowser-onbeforeunload.js", "style.css"],
   "homepage": "https://github.com/fabrizio5680/crossbrowser-onbeforeunload",
