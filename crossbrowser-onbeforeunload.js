@@ -1,7 +1,7 @@
 (function (window, document) {
 	angular.module('crossbrowser-onbeforeunload', [])
 
-		.factory('refreshPrevent', function ($window) {
+		.service('refreshPrevent', function ($window) {
 
 			var message = "Are you sure ?";
 
