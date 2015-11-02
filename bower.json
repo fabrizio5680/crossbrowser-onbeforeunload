@@ -1,0 +1,19 @@
+{
+  "version": "1.0.0",
+  "name": "crossbrowser-onbeforeunload",
+  "main": ["crossbrowser-onbeforeunload.js", "style.css"],
+  "homepage": "https://github.com/fabrizio5680/crossbrowser-onbeforeunload",
+  "authors": [
+    "Fabrizio Bottaro <fabrizio5680@gmail.com>"
+  ],
+  "description": "cross browser reload prevention by https://github.com/Aelios/crossbrowser-onbeforeunload",
+  "moduleType": [],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
